@@ -29,5 +29,13 @@ namespace HospitalDigital
             form.Show();
             this.Hide();
         }
+
+        private void btnVerPassword_Click(object sender, EventArgs e)
+        {
+            if (txtContraseña.PasswordChar == (char)0)
+                txtContraseña.PasswordChar = '*';
+            else
+                txtContraseña.PasswordChar = (char)0;
+        }
     }
 }
