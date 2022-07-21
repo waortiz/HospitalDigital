@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblPrimerNombre = new System.Windows.Forms.Label();
             this.txtPrimerNombre = new System.Windows.Forms.TextBox();
             this.txtSegundoNombre = new System.Windows.Forms.TextBox();
@@ -38,6 +39,9 @@
             this.lblSegundoApellido = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tltMensaje = new System.Windows.Forms.ToolTip(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
             this.SuspendLayout();
             // 
             // lblPrimerNombre
@@ -55,6 +59,7 @@
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(382, 22);
             this.txtPrimerNombre.TabIndex = 1;
+            this.tltMensaje.SetToolTip(this.txtPrimerNombre, "Por favor ingrese el primer nombre sin caracteres especiales");
             // 
             // txtSegundoNombre
             // 
@@ -113,6 +118,7 @@
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
@@ -123,6 +129,10 @@
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // erpError
+            // 
+            this.erpError.ContainerControl = this;
             // 
             // FormularioPaciente
             // 
@@ -140,7 +150,8 @@
             this.Controls.Add(this.txtPrimerNombre);
             this.Controls.Add(this.lblPrimerNombre);
             this.Name = "FormularioPaciente";
-            this.Text = "FormularioPaciente";
+            this.Text = "Paciente";
+            ((System.ComponentModel.ISupportInitialize)(this.erpError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +169,7 @@
         private System.Windows.Forms.Label lblSegundoApellido;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ErrorProvider erpError;
+        private System.Windows.Forms.ToolTip tltMensaje;
     }
 }

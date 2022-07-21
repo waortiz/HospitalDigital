@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HospitalDigital
@@ -15,6 +8,33 @@ namespace HospitalDigital
         public FormularioPaciente()
         {
             InitializeComponent();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            string primerNombre = txtPrimerNombre.Text;
+            string segundoNombre = txtSegundoNombre.Text;
+            string primerApellido = txtPrimerApellido.Text;
+            string segundoApellido = txtSegundoApellido.Text;
+
+            bool error = false;
+            string errores = string.Empty;
+
+            erpError.SetError(txtPrimerNombre, null);
+            if (string.IsNullOrEmpty(primerNombre))
+            {
+                erpError.SetError(txtPrimerNombre, "Por favor ingrese el primer del paciente");
+                errores += "Primer nombre";
+                error = true;
+            }
+
+            if(!error)
+                MessageBox.Show("El paciente fue almacenado exitosamente","Paciente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information );
+            else
+                MessageBox.Show("Por favor revise los datos del paciente: \n" +
+                    errores, "Paciente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
