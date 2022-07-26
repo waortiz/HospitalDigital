@@ -41,6 +41,12 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.erpError = new System.Windows.Forms.ErrorProvider(this.components);
             this.tltMensaje = new System.Windows.Forms.ToolTip(this.components);
+            this.txtNumeroDocumento = new System.Windows.Forms.TextBox();
+            this.lblNumeroDocumento = new System.Windows.Forms.Label();
+            this.txtEstatura = new System.Windows.Forms.TextBox();
+            this.lblEstatura = new System.Windows.Forms.Label();
+            this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
+            this.lblTelefono = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,16 +63,17 @@
             // txtPrimerNombre
             // 
             this.txtPrimerNombre.Location = new System.Drawing.Point(212, 58);
-            this.txtPrimerNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrimerNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrimerNombre.Name = "txtPrimerNombre";
             this.txtPrimerNombre.Size = new System.Drawing.Size(288, 20);
             this.txtPrimerNombre.TabIndex = 1;
             this.tltMensaje.SetToolTip(this.txtPrimerNombre, "Por favor ingrese el primer nombre sin caracteres especiales");
+            this.txtPrimerNombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtPrimerNombre_Validating);
             // 
             // txtSegundoNombre
             // 
             this.txtSegundoNombre.Location = new System.Drawing.Point(212, 89);
-            this.txtSegundoNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSegundoNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtSegundoNombre.Name = "txtSegundoNombre";
             this.txtSegundoNombre.Size = new System.Drawing.Size(288, 20);
             this.txtSegundoNombre.TabIndex = 3;
@@ -84,7 +91,7 @@
             // txtPrimerApellido
             // 
             this.txtPrimerApellido.Location = new System.Drawing.Point(212, 125);
-            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrimerApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrimerApellido.Name = "txtPrimerApellido";
             this.txtPrimerApellido.Size = new System.Drawing.Size(288, 20);
             this.txtPrimerApellido.TabIndex = 5;
@@ -102,7 +109,7 @@
             // txtSegundoApellido
             // 
             this.txtSegundoApellido.Location = new System.Drawing.Point(212, 160);
-            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSegundoApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtSegundoApellido.Name = "txtSegundoApellido";
             this.txtSegundoApellido.Size = new System.Drawing.Size(288, 20);
             this.txtSegundoApellido.TabIndex = 7;
@@ -120,10 +127,10 @@
             // btnGuardar
             // 
             this.btnGuardar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnGuardar.Location = new System.Drawing.Point(0, 332);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardar.Location = new System.Drawing.Point(0, 419);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(600, 34);
+            this.btnGuardar.Size = new System.Drawing.Size(636, 34);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -132,10 +139,10 @@
             // btnCancelar
             // 
             this.btnCancelar.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnCancelar.Location = new System.Drawing.Point(0, 291);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(0, 378);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(600, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(636, 41);
             this.btnCancelar.TabIndex = 9;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -144,11 +151,70 @@
             // 
             this.erpError.ContainerControl = this;
             // 
+            // txtNumeroDocumento
+            // 
+            this.txtNumeroDocumento.Location = new System.Drawing.Point(212, 193);
+            this.txtNumeroDocumento.Name = "txtNumeroDocumento";
+            this.txtNumeroDocumento.Size = new System.Drawing.Size(288, 20);
+            this.txtNumeroDocumento.TabIndex = 10;
+            this.txtNumeroDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumeroDocumento_KeyPress);
+            // 
+            // lblNumeroDocumento
+            // 
+            this.lblNumeroDocumento.AutoSize = true;
+            this.lblNumeroDocumento.Location = new System.Drawing.Point(100, 200);
+            this.lblNumeroDocumento.Name = "lblNumeroDocumento";
+            this.lblNumeroDocumento.Size = new System.Drawing.Size(102, 13);
+            this.lblNumeroDocumento.TabIndex = 11;
+            this.lblNumeroDocumento.Text = "Número Documento";
+            // 
+            // txtEstatura
+            // 
+            this.txtEstatura.Location = new System.Drawing.Point(212, 230);
+            this.txtEstatura.MaxLength = 4;
+            this.txtEstatura.Name = "txtEstatura";
+            this.txtEstatura.Size = new System.Drawing.Size(288, 20);
+            this.txtEstatura.TabIndex = 12;
+            this.txtEstatura.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstatura_KeyPress);
+            this.txtEstatura.Leave += new System.EventHandler(this.txtEstatura_Leave);
+            // 
+            // lblEstatura
+            // 
+            this.lblEstatura.AutoSize = true;
+            this.lblEstatura.Location = new System.Drawing.Point(104, 237);
+            this.lblEstatura.Name = "lblEstatura";
+            this.lblEstatura.Size = new System.Drawing.Size(46, 13);
+            this.lblEstatura.TabIndex = 13;
+            this.lblEstatura.Text = "Estatura";
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Location = new System.Drawing.Point(212, 273);
+            this.txtTelefono.Mask = "000-000-0000";
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(288, 20);
+            this.txtTelefono.TabIndex = 14;
+            // 
+            // lblTelefono
+            // 
+            this.lblTelefono.AutoSize = true;
+            this.lblTelefono.Location = new System.Drawing.Point(104, 280);
+            this.lblTelefono.Name = "lblTelefono";
+            this.lblTelefono.Size = new System.Drawing.Size(49, 13);
+            this.lblTelefono.TabIndex = 15;
+            this.lblTelefono.Text = "Teléfono";
+            // 
             // FormularioPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(636, 453);
+            this.Controls.Add(this.lblTelefono);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.lblEstatura);
+            this.Controls.Add(this.txtEstatura);
+            this.Controls.Add(this.lblNumeroDocumento);
+            this.Controls.Add(this.txtNumeroDocumento);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.txtSegundoApellido);
@@ -159,9 +225,10 @@
             this.Controls.Add(this.lblSegundoNombre);
             this.Controls.Add(this.txtPrimerNombre);
             this.Controls.Add(this.lblPrimerNombre);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormularioPaciente";
             this.Text = "Paciente";
+            this.Validating += new System.ComponentModel.CancelEventHandler(this.FormularioPaciente_Validating);
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -182,5 +249,11 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ErrorProvider erpError;
         private System.Windows.Forms.ToolTip tltMensaje;
+        private System.Windows.Forms.Label lblNumeroDocumento;
+        private System.Windows.Forms.TextBox txtNumeroDocumento;
+        private System.Windows.Forms.Label lblEstatura;
+        private System.Windows.Forms.TextBox txtEstatura;
+        private System.Windows.Forms.Label lblTelefono;
+        private System.Windows.Forms.MaskedTextBox txtTelefono;
     }
 }
