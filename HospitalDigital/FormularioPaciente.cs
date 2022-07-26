@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HospitalDigital
@@ -19,41 +12,29 @@ namespace HospitalDigital
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            byte numero = 10;
-            int otroNumero = (int)10L;
-            numero = (byte)otroNumero;
+            string primerNombre = txtPrimerNombre.Text;
+            string segundoNombre = txtSegundoNombre.Text;
+            string primerApellido = txtPrimerApellido.Text;
+            string segundoApellido = txtSegundoApellido.Text;
 
-            var valor = numero > 20 ? numero - 20 : (numero > 5 ? numero+10 :numero * 10);
-            if (numero > 20)
+            bool error = false;
+            string errores = string.Empty;
+
+            erpError.SetError(txtPrimerNombre, null);
+            if (string.IsNullOrEmpty(primerNombre))
             {
-                valor = numero - 20;
+                erpError.SetError(txtPrimerNombre, "Por favor ingrese el primer del paciente");
+                errores += "Primer nombre";
+                error = true;
             }
-            else if(numero < 5)
-                valor = numero - 5;
+
+            if(!error)
+                MessageBox.Show("El paciente fue almacenado exitosamente","Paciente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information );
             else
-            {
-                valor = numero * 10;
-            }
-
-            int mes = 2;
-            int descuento = 0;
-            switch(numero)
-            {
-                case 1:
-                    descuento = 10;
-                    break;
-                case 2:
-                    descuento = 5;
-                    break;
-                case 3:
-                case 4:
-                    descuento = 3;
-                    break;
-                default:
-                    descuento = 2;
-                    break;
-
-            }
+                MessageBox.Show("Por favor revise los datos del paciente: \n" +
+                    errores, "Paciente",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }
