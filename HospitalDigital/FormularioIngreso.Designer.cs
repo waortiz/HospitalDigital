@@ -31,11 +31,11 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnIngresar = new System.Windows.Forms.Button();
             this.gbUsuario = new System.Windows.Forms.GroupBox();
+            this.btnVerPassword = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
-            this.btnVerPassword = new System.Windows.Forms.Button();
             this.gbUsuario.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +47,7 @@
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "C&ancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.button1_Click);
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnIngresar
             // 
@@ -72,6 +72,18 @@
             this.gbUsuario.TabIndex = 0;
             this.gbUsuario.TabStop = false;
             this.gbUsuario.Text = "Ingreso Datos";
+            // 
+            // btnVerPassword
+            // 
+            this.btnVerPassword.BackgroundImage = global::HospitalDigital.Properties.Resources.eye;
+            this.btnVerPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnVerPassword.Location = new System.Drawing.Point(363, 100);
+            this.btnVerPassword.Name = "btnVerPassword";
+            this.btnVerPassword.Size = new System.Drawing.Size(32, 20);
+            this.btnVerPassword.TabIndex = 4;
+            this.btnVerPassword.Text = "...";
+            this.btnVerPassword.UseVisualStyleBackColor = true;
+            this.btnVerPassword.Click += new System.EventHandler(this.btnVerPassword_Click);
             // 
             // txtContraseña
             // 
@@ -105,18 +117,6 @@
             this.lblUsuario.Size = new System.Drawing.Size(43, 13);
             this.lblUsuario.TabIndex = 0;
             this.lblUsuario.Text = "&Usuario";
-            // 
-            // btnVerPassword
-            // 
-            this.btnVerPassword.BackgroundImage = global::HospitalDigital.Properties.Resources.eye;
-            this.btnVerPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnVerPassword.Location = new System.Drawing.Point(363, 100);
-            this.btnVerPassword.Name = "btnVerPassword";
-            this.btnVerPassword.Size = new System.Drawing.Size(32, 20);
-            this.btnVerPassword.TabIndex = 4;
-            this.btnVerPassword.Text = "...";
-            this.btnVerPassword.UseVisualStyleBackColor = true;
-            this.btnVerPassword.Click += new System.EventHandler(this.btnVerPassword_Click);
             // 
             // FormularioIngreso
             // 

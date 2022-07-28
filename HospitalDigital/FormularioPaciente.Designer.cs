@@ -47,6 +47,8 @@
             this.lblEstatura = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.MaskedTextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
+            this.dtpFechaNacimiento = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaNacimiento = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.erpError)).BeginInit();
             this.SuspendLayout();
             // 
@@ -204,11 +206,29 @@
             this.lblTelefono.TabIndex = 15;
             this.lblTelefono.Text = "Teléfono";
             // 
+            // dtpFechaNacimiento
+            // 
+            this.dtpFechaNacimiento.Location = new System.Drawing.Point(218, 313);
+            this.dtpFechaNacimiento.Name = "dtpFechaNacimiento";
+            this.dtpFechaNacimiento.Size = new System.Drawing.Size(200, 20);
+            this.dtpFechaNacimiento.TabIndex = 16;
+            // 
+            // lblFechaNacimiento
+            // 
+            this.lblFechaNacimiento.AutoSize = true;
+            this.lblFechaNacimiento.Location = new System.Drawing.Point(104, 320);
+            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
+            this.lblFechaNacimiento.Size = new System.Drawing.Size(108, 13);
+            this.lblFechaNacimiento.TabIndex = 17;
+            this.lblFechaNacimiento.Text = "Fecha de Nacimiento";
+            // 
             // FormularioPaciente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 453);
+            this.Controls.Add(this.lblFechaNacimiento);
+            this.Controls.Add(this.dtpFechaNacimiento);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.lblEstatura);
@@ -255,5 +275,7 @@
         private System.Windows.Forms.TextBox txtEstatura;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.MaskedTextBox txtTelefono;
+        private System.Windows.Forms.Label lblFechaNacimiento;
+        private System.Windows.Forms.DateTimePicker dtpFechaNacimiento;
     }
 }

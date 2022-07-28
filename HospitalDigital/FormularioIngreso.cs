@@ -18,18 +18,6 @@ namespace HospitalDigital
         }
 
         /// <summary>
-        /// Este evento permite procesar el evento Clic
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// <remarks></remarks>
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-
-        }
-
-        /// <summary>
         /// 
         /// </summary>
         /// <param name="sender1"></param>
@@ -61,6 +49,11 @@ namespace HospitalDigital
             {
                 txtContraseña.PasswordChar = (char)0;
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

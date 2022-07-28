@@ -5,6 +5,8 @@ namespace HospitalDigital
 {
     public partial class FormularioPaciente : Form
     {
+        public long IdPaciente;
+
         public FormularioPaciente()
         {
             InitializeComponent();
@@ -18,6 +20,7 @@ namespace HospitalDigital
                 string segundoNombre = txtSegundoNombre.Text;
                 string primerApellido = txtPrimerApellido.Text;
                 string segundoApellido = txtSegundoApellido.Text;
+                decimal estatura = Convert.ToDecimal(txtEstatura.Text);
 
                 bool error = false;
                 string errores = string.Empty;
@@ -30,8 +33,9 @@ namespace HospitalDigital
                     error = true;
                 }
 
+                string valores = dtpFechaNacimiento.Value.ToString("dd/MMM/yyyy");
                 if (!error)
-                    MessageBox.Show("El paciente fue almacenado exitosamente", "Paciente",
+                    MessageBox.Show($"El paciente fue almacenado exitosamente: {valores}", "Paciente",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else
                     MessageBox.Show("Por favor revise los datos del paciente: \n" +
@@ -47,6 +51,14 @@ namespace HospitalDigital
                 //Envío email
                 //Log
             }
+        }
+
+        private static bool Validardatos()
+        {
+            var valor = true;
+
+
+            return valor;
         }
 
         private void txtNumeroDocumento_KeyPress(object sender, KeyPressEventArgs e)
