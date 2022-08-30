@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Windows.Forms;
 
 namespace HospitalDigital
@@ -64,7 +65,7 @@ namespace HospitalDigital
         private void txtNumeroDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             int numero = e.KeyChar; 
-            if(numero < 48 || numero > 57 )
+            if(numero < (int)TablaASCII.CERO || numero > (int)TablaASCII.NUEVE)
             {
                 e.Handled = true;
             }

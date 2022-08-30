@@ -25,6 +25,7 @@ namespace HospitalDigital
         private void btnIngresar_Click(object sender1, EventArgs e)
         {
             var form = new FormularioPaciente();
+            form.IdPaciente = 20; 
             form.Show();
             this.Hide();
         }

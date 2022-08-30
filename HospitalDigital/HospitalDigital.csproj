@@ -58,6 +58,7 @@
     <Compile Include="FormularioPaciente.Designer.cs">
       <DependentUpon>FormularioPaciente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Paciente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormularioIngreso.resx">
@@ -91,6 +92,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{8af47f2d-e276-479b-b154-34e6472b8b42}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{3cc82b1a-1393-4960-8ff1-b9949bdf2beb}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
