@@ -1,4 +1,6 @@
 ﻿using Entidades;
+using Negocio;
+using Repositorio;
 using System;
 using System.Windows.Forms;
 
@@ -7,10 +9,12 @@ namespace HospitalDigital
     public partial class FormularioPaciente : Form
     {
         public long IdPaciente;
+        public IPacienteRepositorio pacienteRepositorio;
 
         public FormularioPaciente()
         {
             InitializeComponent();
+            pacienteRepositorio = new PacienteRepositorioJSON();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -36,8 +40,23 @@ namespace HospitalDigital
 
                 string valores = dtpFechaNacimiento.Value.ToString("dd/MMM/yyyy");
                 if (!error)
+                {
+                    var paciente = new Paciente()
+                    {
+                         Estatura = estatura,
+                         FechaNacimiento = dtpFechaNacimiento.Value,
+                         PrimerApellido = primerApellido,
+                         SegundoApellido = segundoApellido,
+                         PrimerNombre = primerNombre,
+                         SegundoNombre = segundoNombre,
+                         Id = new Random().Next()
+                    };
+                    var negocio = new PacienteNegocio(pacienteRepositorio);
+                    negocio.IngresarPaciente(paciente);
+
                     MessageBox.Show($"El paciente fue almacenado exitosamente: {valores}", "Paciente",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
                 else
                     MessageBox.Show("Por favor revise los datos del paciente: \n" +
                         errores, "Paciente",

@@ -8,10 +8,11 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>HospitalDigital</RootNamespace>
     <AssemblyName>HospitalDigital</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -58,7 +59,6 @@
     <Compile Include="FormularioPaciente.Designer.cs">
       <DependentUpon>FormularioPaciente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Paciente.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormularioIngreso.resx">
@@ -101,6 +101,10 @@
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{3cc82b1a-1393-4960-8ff1-b9949bdf2beb}</Project>
       <Name>Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Repositorio\Repositorio.csproj">
+      <Project>{1f06d670-3ec4-435c-806e-248f2a7fe82c}</Project>
+      <Name>Repositorio</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

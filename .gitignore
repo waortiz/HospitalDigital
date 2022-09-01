@@ -6,3 +6,9 @@
 /HospitalDigital/obj/Debug
 /.vs/HospitalDigital/v17
 /Entidades/obj/Debug
+/Entidades/bin/Debug
+/Negocio/bin/Debug
+/Negocio/obj/Debug
+/Repositorio/bin/Debug
+/Repositorio/obj/Debug
+/packages/Newtonsoft.Json.13.0.1
