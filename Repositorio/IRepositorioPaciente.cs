@@ -2,7 +2,7 @@
 
 namespace Repositorio
 {
-    public interface IPacienteRepositorio
+    public interface IRepositorioPaciente
     {
         void IngresarPaciente(Paciente paciente);
     }

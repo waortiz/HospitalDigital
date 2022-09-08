@@ -10,3 +10,32 @@ C:\Users\Estudiante.SALA235-PC06\source\repos\HospitalDigital\HospitalDigital\ob
 C:\Users\Estudiante.SALA235-PC06\source\repos\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.pdb
 C:\Users\Estudiante.SALA235-PC06\source\repos\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.FormularioIngreso.resources
 C:\Users\Estudiante.SALA235-PC06\source\repos\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.FormularioPaciente.resources
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\HospitalDigital.exe.config
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\HospitalDigital.exe
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\HospitalDigital.pdb
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.csproj.AssemblyReference.cache
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.csproj.SuggestedBindingRedirects.cache
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.FormularioIngreso.resources
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.FormularioPaciente.resources
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.Properties.Resources.resources
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.csproj.GenerateResource.cache
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.csproj.CoreCompileInputs.cache
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.exe
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.pdb
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Entidades.dll
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Negocio.dll
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Repositorio.dll
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Newtonsoft.Json.dll
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Entidades.pdb
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Negocio.pdb
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Repositorio.pdb
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Newtonsoft.Json.xml
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\obj\Debug\HospitalDigital.csproj.CopyComplete
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\EntityFramework.dll
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\EntityFramework.SqlServer.dll
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Modelo.dll
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Repositorio.dll.config
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\EntityFramework.xml
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\EntityFramework.SqlServer.xml
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Modelo.pdb
+D:\Clases\Programacion II\Talleres\20221\HospitalDigital\HospitalDigital\bin\Debug\Modelo.dll.config

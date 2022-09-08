@@ -9,37 +9,32 @@ namespace HospitalDigital
     public partial class FormularioPaciente : Form
     {
         public long IdPaciente;
-        public IPacienteRepositorio pacienteRepositorio;
+        public IRepositorioPaciente repositorioPaciente;
+        public IRepositorioMaestro repositorioMaestro;
 
         public FormularioPaciente()
         {
             InitializeComponent();
-            pacienteRepositorio = new PacienteRepositorioJSON();
+            repositorioPaciente = new RepositorioPacienteEF();
+            repositorioMaestro = new RepositorioMaestroEF();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
+                string numeroDocumento = txtNumeroDocumento.Text;
+                var tipoDocumento = cboTipoDocumento.SelectedItem as TipoDocumento;
                 string primerNombre = txtPrimerNombre.Text;
                 string segundoNombre = txtSegundoNombre.Text;
                 string primerApellido = txtPrimerApellido.Text;
                 string segundoApellido = txtSegundoApellido.Text;
+                string telefono = txtTelefono.Text;
                 decimal estatura = Convert.ToDecimal(txtEstatura.Text);
-
-                bool error = false;
-                string errores = string.Empty;
-
-                erpError.SetError(txtPrimerNombre, null);
-                if (string.IsNullOrEmpty(primerNombre))
-                {
-                    erpError.SetError(txtPrimerNombre, "Por favor ingrese el primer del paciente");
-                    errores += "Primer nombre";
-                    error = true;
-                }
-
                 string valores = dtpFechaNacimiento.Value.ToString("dd/MMM/yyyy");
-                if (!error)
+
+                var estado = ValidarDatos();
+                if (estado)
                 {
                     var paciente = new Paciente()
                     {
@@ -49,17 +44,19 @@ namespace HospitalDigital
                          SegundoApellido = segundoApellido,
                          PrimerNombre = primerNombre,
                          SegundoNombre = segundoNombre,
+                         Telefono = telefono,
+                         TipoDocumento = tipoDocumento,
+                         NumeroDocumento = numeroDocumento,
                          Id = new Random().Next()
                     };
-                    var negocio = new PacienteNegocio(pacienteRepositorio);
+                    var negocio = new NegocioPaciente(repositorioPaciente);
                     negocio.IngresarPaciente(paciente);
 
                     MessageBox.Show($"El paciente fue almacenado exitosamente: {valores}", "Paciente",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                    MessageBox.Show("Por favor revise los datos del paciente: \n" +
-                        errores, "Paciente",
+                    MessageBox.Show("Por favor revise los datos del paciente", "Paciente",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             catch(Exception exc)
@@ -73,12 +70,58 @@ namespace HospitalDigital
             }
         }
 
-        private static bool Validardatos()
+        private bool ValidarDatos()
         {
-            var valor = true;
+            bool estado = true;
 
+            erpError.SetError(cboTipoDocumento, null);
+            if (cboTipoDocumento.SelectedItem == null)
+            {
+                erpError.SetError(txtTelefono, "Por favor seleccione el tipo de documento");
+                estado = false;
+            }
 
-            return valor;
+            erpError.SetError(txtNumeroDocumento, null);
+            if (string.IsNullOrEmpty(txtNumeroDocumento.Text))
+            {
+                erpError.SetError(txtNumeroDocumento, "Por favor ingrese el número de documento");
+                estado = false;
+            }
+            erpError.SetError(txtPrimerNombre, null);
+            if (string.IsNullOrEmpty(txtPrimerNombre.Text))
+            {
+                erpError.SetError(txtPrimerNombre, "Por favor ingrese el primer del paciente");
+                estado = false;
+            }
+            erpError.SetError(txtPrimerApellido, null);
+            if (string.IsNullOrEmpty(txtPrimerApellido.Text))
+            {
+                erpError.SetError(txtPrimerApellido, "Por favor ingrese el primer del apellido");
+                estado = false;
+            }
+
+            erpError.SetError(txtEstatura, null);
+            if (string.IsNullOrEmpty(txtEstatura.Text))
+            {
+                erpError.SetError(txtEstatura, "Por favor ingrese la estatura");
+                estado = false;
+            }
+
+            erpError.SetError(txtTelefono, null);
+            if (string.IsNullOrEmpty(txtTelefono.Text))
+            {
+                erpError.SetError(txtTelefono, "Por favor ingrese el teléfono");
+                estado = false;
+            }
+
+            erpError.SetError(dtpFechaNacimiento, null);
+            if (dtpFechaNacimiento.Value > DateTime.Now)
+            {
+                erpError.SetError(txtTelefono, "La fecha de nacimiento no puede ser mayor a la fecha actual");
+                estado = false;
+            }
+
+            return estado;
         }
 
         private void txtNumeroDocumento_KeyPress(object sender, KeyPressEventArgs e)
@@ -129,6 +172,14 @@ namespace HospitalDigital
             {
                 erpError.SetError(txtEstatura, null);
             }
+        }
+
+        private void FormularioPaciente_Load(object sender, EventArgs e)
+        {
+            var negocioMaestro = new NegocioMaestro(repositorioMaestro);
+            var tiposDocumento = negocioMaestro.ObtenerTiposDocumento();
+            cboTipoDocumento.DataSource = tiposDocumento;
+            cboTipoDocumento.DisplayMember = "Nombre";
         }
     }
 }

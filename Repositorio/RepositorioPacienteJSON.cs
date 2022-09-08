@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Repositorio
 {
-    public class PacienteRepositorioJSON : IPacienteRepositorio
+    public class RepositorioPacienteJSON : IRepositorioPaciente
     {
         public static List<Paciente> pacientes = new List<Paciente>();
 

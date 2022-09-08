@@ -5,11 +5,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1F06D670-3EC4-435C-806E-248F2A7FE82C}</ProjectGuid>
+    <ProjectGuid>{2AA7D890-2C74-4AC0-8FB5-8F6D3901903E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Repositorio</RootNamespace>
-    <AssemblyName>Repositorio</AssemblyName>
+    <RootNamespace>Modelo</RootNamespace>
+    <AssemblyName>Modelo</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -40,12 +40,8 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -55,25 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IRepositorioPaciente.cs" />
-    <Compile Include="IRepositorioMaestro.cs" />
-    <Compile Include="RepositorioMaestroEF.cs" />
-    <Compile Include="RepositorioMaestroADO.cs" />
-    <Compile Include="RepositorioMaestro.cs" />
-    <Compile Include="RepositorioPacienteEF.cs" />
-    <Compile Include="RepositorioPacienteADO.cs" />
-    <Compile Include="RepositorioPacienteJSON.cs" />
+    <Compile Include="ContextoHospitalDigital.cs" />
+    <Compile Include="Paciente.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Entidades\Entidades.csproj">
-      <Project>{8af47f2d-e276-479b-b154-34e6472b8b42}</Project>
-      <Name>Entidades</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Modelo\Modelo.csproj">
-      <Project>{2AA7D890-2C74-4AC0-8FB5-8F6D3901903E}</Project>
-      <Name>Modelo</Name>
-    </ProjectReference>
+    <Compile Include="TipoDocumento.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
